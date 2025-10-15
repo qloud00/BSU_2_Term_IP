@@ -1,63 +1,73 @@
-import java.io.IOException;
-import java.io.RandomAccessFile;
+import java.io.*;
 
 public class IndexBinary {
-    private final RandomAccessFile file;
-    private final int RECORD_SIZE = 24;
+    private final static int RECORD_SIZE = 4 + 10 * 2 + 8; // int + char[10] + double = 32 байта
 
-    public IndexBinary(String filename) throws IOException {
-        file = new RandomAccessFile(filename, "r");
-    }
-
-    public int getRecordCount() throws IOException {
-        return (int)(file.length() / RECORD_SIZE);
-    }
-
-    public Record getRecord(int recordNumber) throws IOException {
-        if (recordNumber < 0 || recordNumber >= getRecordCount()) {
-            throw new IndexOutOfBoundsException("Нет такой записи");
+    public static void createBinaryFile(int[] ids, String[] names, double[] values, String filename) {
+        try (DataOutputStream dos = new DataOutputStream(new FileOutputStream(filename))) {
+            for (int i = 0; i < ids.length; i++) {
+                dos.writeInt(ids[i]);
+                writeFixedString(dos, names[i], 10); // char[10]
+                dos.writeDouble(values[i]);
+            }
+            System.out.println("Бинарный файл успешно создан: " + filename);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-        long offset = recordNumber * RECORD_SIZE;
-        file.seek(offset);
-
-        int intValue = file.readInt();
-
-        byte[] charBytes = new byte[10];
-        file.readFully(charBytes);
-        String strValue = new String(charBytes).trim();
-
-        file.skipBytes(2);
-
-        double doubleValue = file.readDouble();
-
-
-        return new Record(intValue, strValue, doubleValue);
     }
 
-    public void close() throws IOException {
-        file.close();
+    public static  long[] createIndexArray(String filename) {
+        try (RandomAccessFile raf = new RandomAccessFile(filename, "r")) {
+            long fileLength = raf.length();
+            int recordCount = (int) (fileLength / RECORD_SIZE);
+            long[] indexArray = new long[recordCount];
+
+            for (int i = 0; i < recordCount; i++) {
+                indexArray[i] = i * RECORD_SIZE;
+            }
+
+            System.out.println("Индексный массив создан (" + recordCount + " записей)");
+            return indexArray;
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return new long[0];
+        }
     }
 
-    public static class Record {
-        public int intValue;
-        public String strValue;
-        public double doubleValue;
+    public static void readByIndex(long[] indexArray, int recordIndex, String filename) {
 
-        public Record(int i, String s, double d) {
-            intValue = i;
-            strValue = s;
-            doubleValue = d;
-        }
+        try (RandomAccessFile raf = new RandomAccessFile(filename, "r")) {
+            raf.seek(indexArray[recordIndex]);
 
-        @Override
-        public String toString() {
-            return "Record{" +
-                    "intValue=" + intValue +
-                    ", strValue='" + strValue + '\'' +
-                    ", doubleValue=" + doubleValue +
-                    '}';
+            int id = raf.readInt();
+            String name = readFixedString(raf, 10);
+            double value = raf.readDouble();
+
+            System.out.println("Запись №" + (recordIndex + 1));
+            System.out.println("ID: " + id + ", Имя: " + name + ", Зарплата: " + value);
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+    }
+
+    private static void writeFixedString(DataOutputStream dos, String s, int length) throws IOException {
+        StringBuilder sb = new StringBuilder(s);
+        if (sb.length() > length) sb.setLength(length);
+        else while (sb.length() < length) sb.append(' ');
+        dos.writeChars(sb.toString());
+    }
+
+    private static String readFixedString(RandomAccessFile raf, int length) throws IOException {
+        char[] chars = new char[length];
+        for (int i = 0; i < length; i++) {
+            chars[i] = raf.readChar();
+        }
+        return new String(chars).trim();
     }
 
 }
+
+
+

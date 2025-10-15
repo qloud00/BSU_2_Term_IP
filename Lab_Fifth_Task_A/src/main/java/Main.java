@@ -1,25 +1,21 @@
-import java.io.File;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        try {
+        String filename = "records.bin";
 
-            IndexBinary indexer = new IndexBinary("C:/Test/testFile.bin");
+        int[] ids = {1, 2, 3, 4};
+        String[]  names = {"Алиса", "Борис", "Сергей", "Дмитрий"};
+        double[] values = {40.5, 45.5, 30.5, 10.2};
 
-            System.out.println("Всего записей: " + indexer.getRecordCount());
-            int recordNumber;
-            System.out.println("Введите номер записи которую хотите прочитать : ");
-            recordNumber = input.nextInt();
-            IndexBinary.Record record = indexer.getRecord(recordNumber);
-            String recordStr = new String(String.valueOf(record)).trim();
-            System.out.println("Запись " + recordNumber +  ": " + recordStr);
+        IndexBinary.createBinaryFile(ids, names, values, filename);
+        long [] indexArray = IndexBinary.createIndexArray(filename);
 
-            indexer.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        System.out.println("Введите номер записи: ");
+        int recordNumber;
+        recordNumber = input.nextInt();
+
+        IndexBinary.readByIndex(indexArray, recordNumber - 1, filename);
     }
 }
