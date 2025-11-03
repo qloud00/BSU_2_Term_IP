@@ -1,0 +1,54 @@
+Suhanov Kirill Vitaliecvich, 2, 7, PM
+Mathanalysis: Prokhorov A.S., true, 7
+Algebra: Sokolova E.V., false, Retake
+Python: Orlov M.K., true, 8
+DMiML: Novikov T.I., false, Retake
+IBG: Kuznetsova O.D., true, 5
+EVM: Belyaev D.S., false, Retake
+ML: Kudryavtsev A.A., true, 9
+Web-development: Petrova S.K., false, Retake
+
+
+Homich Mihail Batkovich, 1, 3, I
+Mathanalysis: Lebedeva I.M., true, 9
+Algebra: Fedorov N.G., true, 10
+Python: Zakharova A.A., true, 7
+DMiML: Morozova L.R., true, 9
+IBG: Vorontsov S.I., true, 10
+EVM: Safronov I.L., true, 10
+ML: Tikhonov P.L., true, 8
+Web-development: Shcherbakov A.A., true, 10
+ChiFR: Orlova G.F., true, 9
+TViMS: Galkin V.V., true, 10
+OOP: Abramova M.P., true, 10
+AiSD: Titova V.M., true, 10
+
+
+Kudryavtsev Aliaksei Sergeevich, 3, 11, PI
+Mathanalysis: Prokhorov A.S., true, 9
+Algebra: Fedorov N.G., true, 9
+Python: Orlov M.K., true, 7
+DMiML: Morozova L.R., true, 9
+IBG: Kuznetsova O.D., true, 4
+EVM: Safronov I.L., true, 5
+ML: Tikhonov P.L., true, 8
+Web-development: Shcherbakov A.A., true, 10
+ChiFR: Orlova G.F., true, 9
+TViMS: Galkin V.V., true, 10
+OOP: Abramova M.P., true, 10
+AiSD: Titova V.M., true, 10
+
+
+Strackovich Ivan Olegovich, 4, 8, KB
+Mathanalysis: Lebedeva I.M., true, 6
+Algebra: Sokolova E.V., false, Retake
+Python: Zakharova A.A., true, 8
+DMiML: Novikov T.I., false, Retake
+IBG: Vorontsov S.I., true, 7
+EVM: Belyaev D.S., false, Retake
+ML: Tikhonov P.L., true, 9
+Web-development: Petrova S.K., false, Retake
+ChiFR: Prokhorov A.S., true, 6
+TViMS: Melnikov P.S., false, Retake
+OOP: Abramova M.P., true, 7
+AiSD: Volkov S.I., false, Retake
