@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<library xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="librarySchema.xsd">
+    <book id="1">
+        <title>Java Programming</title>
+        <author>James Gosling</author>
+        <year>2020</year>
+        <price>49.99</price>
+        <category>programming</category>
+        <amount>12</amount>
+        <available>9</available>
+    </book>
+    <book id="2">
+        <title>Design Patterns</title>
+        <author>Erich Gamma</author>
+        <year>1994</year>
+        <price>39.99</price>
+        <category>computer-science</category>
+        <amount>3</amount>
+        <available>0</available>
+    </book>
+    <book id="3">
+        <title>Gone with the Wind</title>
+        <author>Margaret Mitchell</author>
+        <year>1936</year>
+        <price>13.99</price>
+        <category>novel</category>
+        <amount>15</amount>
+        <available>9</available>
+    </book>
+    <book id="4">
+        <title>A Farewell to Arms</title>
+        <author>Ernest Hemingway</author>
+        <year>1929</year>
+        <price>8.99</price>
+        <category>novel</category>
+        <amount>10</amount>
+        <available>7</available>
+    </book>
+    <book id="5">
+        <title>The Old man and the Sea</title>
+        <author>Ernest Hemingway</author>
+        <year>1952</year>
+        <price>8.99</price>
+        <category>novella</category>
+        <amount>8</amount>
+        <available>5</available>
+    </book>
+    <book id="6">
+        <title>To Kill a Mockingbird</title>
+        <author>Harper Lee</author>
+        <year>1960</year>
+        <price>9.99</price>
+        <category>novel</category>
+        <amount>5</amount>
+        <available>1</available>
+    </book>
+    <book id="7">
+        <title>The Catcher in the Ray</title>
+        <author>Jerome Salinger</author>
+        <year>1951</year>
+        <price>11.99</price>
+        <category>novel</category>
+        <amount>6</amount>
+        <available>2</available>
+    </book>
+    <book id="8">
+        <title>Three Comrades</title>
+        <author>Erich Remarque</author>
+        <year>1937</year>
+        <price>7.99</price>
+        <category>novel</category>
+        <amount>12</amount>
+        <available>9</available>
+    </book>
+    <book id="9">
+        <title>All Quiet on the Western Front</title>
+        <author>Erich Remarque</author>
+        <year>1929</year>
+        <price>7.99</price>
+        <category>novel</category>
+        <amount>20</amount>
+        <available>10</available>
+    </book>
+    <book id="10">
+        <title>Arch of Triumph</title>
+        <author>Erich Remarque</author>
+        <year>1945</year>
+        <price>7.99</price>
+        <category>novel</category>
+        <amount>15</amount>
+        <available>7</available>
+    </book>
+    <book id="11">
+        <title>Clean Code</title>
+        <author>Robert Martin</author>
+        <year>2008</year>
+        <price>20.49</price>
+        <category>programming</category>
+        <amount>3</amount>
+        <available>3</available>
+    </book>
+    <book id="12">
+        <title>The Mythical Man-Month</title>
+        <author>Fred Brooks</author>
+        <year>1975</year>
+        <price>25.99</price>
+        <category>computer-science</category>
+        <amount>1</amount>
+        <available>0</available>
+    </book>
+    <book id="13">
+        <title>Wuthering Heights</title>
+        <author>Emily Bronte</author>
+        <year>1847</year>
+        <price>7.99</price>
+        <category>novel</category>
+        <amount>9</amount>
+        <available>6</available>
+    </book>
+    <book id="14">
+        <title>One Hundred Years of Solitude</title>
+        <author>Gabriel Marquez</author>
+        <year>1967</year>
+        <price>10.49</price>
+        <category>novel</category>
+        <amount>5</amount>
+        <available>3</available>
+    </book>
+    <book id="15">
+        <title>Nausea</title>
+        <author>Jean-Paul Sartre</author>
+        <year>1938</year>
+        <price>8.99</price>
+        <category>novel</category>
+        <amount>9</amount>
+        <available>6</available>
+    </book>
+    <book id="16">
+        <title>My Life</title>
+        <author>Daniele Lukentei</author>
+        <year>2024</year>
+        <price>49.99</price>
+        <category>novel</category>
+        <amount>1</amount>
+        <available>0</available>
+    </book>
+</library>
